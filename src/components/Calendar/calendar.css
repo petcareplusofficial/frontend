@@ -1,0 +1,28 @@
+.calendar button:focus { 
+  outline: none; 
+}            
+
+.calendar button:focus-visible {
+  outline: 2px solid #00425C;                        
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+.calendar button:hover:not(:disabled) {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.calendar button:active:not(:disabled) {
+  transform: scale(0.95);
+  transition: transform 0.1s ease;
+}
+
+.calendar button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.calendar button span {
+  transition: all 0.2s ease;
+}

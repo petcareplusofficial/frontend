@@ -1,0 +1,49 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 24px;
+  gap: 10px;
+}
+
+.input-label {
+  margin-bottom: 4px;
+  color: #222;
+  font-size: 16px;
+}
+
+/* Main input boxes: gray background, subtle border, text left */
+.input-field {
+  border: none;
+  border-radius: 2px 2px 0 0;
+  padding: 20px 16px 16px 16px;
+  font-size: 18px;
+  color: #444;
+  outline: none;
+  border-radius: 10px;
+  min-height: 50px;
+}
+
+.input-helper {
+  margin-top: 4px;
+  color: #888;
+  font-size: 15px;
+}
+
+/* Widths are not yet desided so going wiht 100% for now */
+/* Large */
+.input-wrapper.large .input-field {
+  /* width: 288px; */
+  height: 10px;
+}
+
+/* Medium */
+.input-wrapper.medium .input-field {
+  /* width: 288px; */
+  height: 8px;
+}
+
+/* Small (Mobile) */
+.input-wrapper.small .input-field {
+  /* width: 209px;     */
+  height: 6px;
+}

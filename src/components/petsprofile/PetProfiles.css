@@ -1,0 +1,440 @@
+.pet-profile-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif !important;
+  background: #EDF6F7;
+  min-height: 100vh;
+}
+
+.pet-profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.add-pet-header-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #1E6F78;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-pet-header-btn .add-icon {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.add-pet-header-btn:hover {
+  background: #2c8a94;
+  transform: scale(1.05);
+}
+
+.notification-icon {
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.notification-icon:hover {
+  transform: scale(1.1);
+}
+
+.pet-card-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.pet-avatar-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.pet-avatar-large {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pet-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pet-avatar-placeholder {
+  font-size: 14px;
+  color: white;
+  font-weight: 600;
+}
+
+.edit-pet-avatar-btn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #f0f0f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: #666;
+}
+
+.edit-pet-avatar-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pet-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 5px 0;
+}
+
+.pet-species {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 8px 0;
+}
+
+.pet-breed {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+.pet-breed strong {
+  font-weight: 600;
+}
+
+.basic-detail-section {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.detail-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.detail-edit-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.detail-edit-btn:hover {
+  background: #f5f5f5;
+  transform: scale(1.1);
+}
+
+.detail-edit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.detail-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px 40px;
+  margin-bottom: 30px;
+}
+
+.pet-form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.pet-field-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.pet-field-input,
+.pet-field-input select {
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #1c1c1c;
+  transition: all 0.2s;
+  background-color: #fafafa;
+  font-family: inherit;
+}
+
+.pet-field-input:focus,
+select.pet-field-input:focus {
+  outline: none;
+  border-color: #1E6F78;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(30, 111, 120, 0.1);
+}
+
+.pet-field-input.read-only,
+select.pet-field-input:disabled {
+  background-color: #f5f5f5;
+  color: #666;
+  cursor: not-allowed;
+  border-color: #e0e0e0;
+}
+
+select.pet-field-input {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23666' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+select.pet-field-input:disabled {
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23ccc' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Loading State */
+.loading-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  color: #666;
+  font-size: 16px;
+}
+
+.detail-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.delete-pet-btn,
+.add-update-btn {
+  padding: 12px 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  min-width: 140px;
+}
+
+.delete-pet-btn {
+  background: #d45a7c;
+  color: white;
+}
+
+.delete-pet-btn:hover {
+  background: #c14a6c;
+}
+
+.add-update-btn {
+  background: #1E6F78;
+  color: white;
+  box-shadow: 0 4px 12px rgba(30, 111, 120, 0.3);
+}
+
+.add-update-btn:hover {
+  background: #2c8a94;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(30, 111, 120, 0.4);
+}
+
+.add-update-btn:active,
+.delete-pet-btn:active {
+  transform: translateY(0);
+}
+
+/* Error Container */
+.error-container {
+  padding: 40px;
+  text-align: center;
+  background: #fff5f5;
+  border-radius: 12px;
+  border: 2px solid #fee;
+  margin: 40px 0;
+}
+
+.error-container p {
+  color: #c53030;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.error-container button {
+  padding: 10px 24px;
+  background: #1E6F78;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.error-container button:hover {
+  background: #2c8a94;
+}
+
+@media (max-width: 1024px) {
+  .basic-detail-section {
+    padding: 25px;
+  }
+
+  .detail-form-grid {
+    gap: 20px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pet-profile-page {
+    padding: 15px;
+  }
+
+  .pet-profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .page-title {
+    font-size: 26px;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .pet-card-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pet-avatar-large {
+    width: 120px;
+    height: 120px;
+  }
+
+  .pet-avatar-placeholder {
+    font-size: 12px;
+  }
+
+  .basic-detail-section {
+    padding: 20px;
+  }
+
+  .detail-form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .detail-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .delete-pet-btn,
+  .add-update-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-pet-header-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .pet-card-section {
+    padding: 20px;
+  }
+
+  .basic-detail-section {
+    padding: 15px;
+  }
+
+  .pet-name {
+    font-size: 22px;
+  }
+
+  .pet-species, .pet-breed {
+    font-size: 15px;
+  }
+}

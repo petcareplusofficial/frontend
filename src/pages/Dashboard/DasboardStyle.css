@@ -1,0 +1,219 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dashboard-grid {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+.firstContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.secondContainer,
+.thirdContainer {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+}
+
+.thirdContainerThirdChild {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    justify-content: center;
+    flex: 1 1 100%;
+}
+
+.secondContainerWrapper,
+.thirdContainerWrapper {
+    background: #fffffd;
+    border: 1px solid rgba(94, 82, 64, 0.12);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    /* flex-grow is 1, so they will expand to fill space */
+    flex: 1 1 350px;
+    min-height: 320px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 1060px) {
+    .secondContainerWrapper,
+    .no-data-section {
+        margin-top: 80px;
+    }
+}
+
+/* --- UPDATED SECTION --- */
+.secondContainerWrapper {
+    /* Changed from 550px to 100% so it fills the available space */
+    max-width: 100%;
+}
+/* ----------------------- */
+
+.secondContainerWrapper h2 {
+    padding: 10px 0;
+}
+
+.seconContainersFirstContainer {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+    flex: 1 1 auto;
+    max-width: 640px;
+}
+
+.secondContainersSecondContainer {
+    color: black;
+}
+
+.allergyCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* max-width: 350px; */
+}
+
+.allergyList {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.allergySeverity {
+    text-transform: capitalize;
+}
+.allergySymptoms {
+    text-transform: capitalize;
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 320px;
+    max-height: 320px;
+    margin: 0 auto;
+}
+
+/* ---------- Mobile (ALL CARDS SAME SIZE) ---------- */
+@media screen and (max-width: 480px) {
+    .secondContainerWrapper,
+    .thirdContainerWrapper {
+        flex: 1 1 100%;
+        min-height: 300px;
+        padding: 16px;
+    }
+    .allergyCard {
+        max-height: 250px;
+        overflow-y: auto;
+    }
+
+    .allergyList {
+        flex-direction: row;
+        gap: 8px;
+        max-height: 200px;
+        overflow-y: auto;
+        padding-right: 4px;
+    }
+
+    .dashboard-grid > * {
+        width: 100% !important;
+    }
+
+    .chart-container {
+        max-width: 240px;
+        max-height: 240px;
+    }
+}
+
+/* ---------- Tablet Layout ---------- */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .secondContainerWrapper,
+    .thirdContainerWrapper {
+        min-height: 320px;
+    }
+    .thirdContainerWrapper {
+        overflow: hidden;
+        word-break: break-word;
+    }
+
+    .thirdContainerWrapper > * {
+        max-height: 220px;
+        overflow-y: auto;
+        padding-right: 6px;
+    }
+}
+
+/* ---------- Medium Screens (769px - 1060px) ---------- */
+@media screen and (min-width: 769px) and (max-width: 1060px) {
+    .seconContainersFirstContainer {
+        flex-flow: row wrap;
+    }
+
+    .card {
+        margin: 0 auto;
+        /* max-width: 400px !important; */
+    }
+
+    .chart-container {
+        max-width: 280px;
+        max-height: 280px;
+    }
+}
+
+/* ---------- Large Screens (Desktop 1060px+) ---------- */
+@media screen and (min-width: 1060px) {
+    .chart-container {
+        max-width: 300px;
+        max-height: 300px;
+    }
+    .secondContainerWrapper,
+    .thirdContainerWrapper {
+        min-height: 320px;
+        justify-content: space-around;
+    }
+}
+
+.dashboard-no-pet {
+    display: flex;
+    flex-flow: column wrap;
+    flex: 1 1 auto;
+    height: calc(100vh - 100px);
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.no-data-section {
+    display: flex;
+    justify-self: center !important;
+    align-self: center !important;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.newfirstContainer .label {
+    font-size: 1rem !important;
+}

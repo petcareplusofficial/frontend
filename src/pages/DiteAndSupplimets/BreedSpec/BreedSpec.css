@@ -1,0 +1,29 @@
+.breed-guidance-container {
+  padding: 2.5rem 1rem;
+  background: #ecf6f8;
+  min-height: 100vh;
+}
+.chart-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0001;
+  margin: 2rem 0;
+  padding: 1rem;
+  max-width: 700px;
+}
+.recommendation-card {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 4px #0001;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+}
+.ai-insight-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}

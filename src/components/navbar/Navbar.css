@@ -1,0 +1,224 @@
+/* -------------------- 1. Main navbar Container -------------------- */
+.navbar {
+  background-color: #1e6f78;
+  color: #edf6f7;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px 0 10px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  transition: width 0.3s ease-in-out;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.navbar.collapsed {
+  width: 123px; /* Slightly slimmer & precise like your screenshot */
+  align-items: center;
+  padding-top: 25px; /* Adds top breathing room for perfect alignment */
+}
+
+/* -------------------- 2. Logo Section (TOP) -------------------- */
+.logo-section {
+  display: flex;
+  align-items: center;
+  /* padding: 10px 10px 10px 25px;  */
+  width: 100%;
+  height: 100px;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+  min-width: 50px;
+  margin-bottom: 20px;
+}
+
+.navbar.collapsed .logo-section {
+  width: 100%;
+  padding: 0;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  gap: 5px;
+}
+
+.app-logo-container {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  overflow: hidden;
+}
+
+.app-logo-svg {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+.navbar.collapsed .app-logo-svg {
+  margin-right: 0;
+}
+
+/* -------------------- 3. Toggle Button -------------------- */
+.sidebar-toggle {
+  padding: 6px;
+  cursor: pointer;
+}
+
+.navbar.collapsed .sidebar-toggle {
+  margin-left: 0;
+  margin-top: 6px;
+}
+
+/* -------------------- 4. Navigation Items -------------------- */
+.nav-group {
+  padding: 0;
+  width: 100%;
+}
+
+.dashboard-nav-item {
+  display: flex;
+  align-items: center;
+  padding: 19px 22px;
+  justify-content: flex-start;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.dashboard-nav-item .icon {
+  width: 24px;
+  margin-right: 15px;
+}
+
+.navbar.collapsed .dashboard-nav-item {
+  padding: 22px 0; /* Vertical spacing like Image 2 */
+  justify-content: center;
+}
+
+.navbar.collapsed .dashboard-nav-item .icon {
+  margin-right: 0; /* Center perfectly */
+}
+
+.navbar.collapsed .dashboard-nav-item span:last-child {
+  display: none;
+}
+
+/* -------------------- 5. Headings -------------------- */
+.nav-heading {
+  font-size: 0.8rem;
+  padding: 10px 20px 5px 20px;
+  margin: 0;
+  transition: opacity 0.3s;
+}
+
+.navbar.collapsed .nav-heading {
+  opacity: 0;
+  height: 0;
+  padding: 0;
+}
+
+/* -------------------- 6. Profile Section (Bottom) -------------------- */
+.profile-group {
+  margin-top: auto;
+  width: 100%;
+}
+
+.profile-dropdown-container {
+  padding: 10px 20px;
+}
+
+.navbar.collapsed .profile-dropdown-container {
+  padding: 20px 0; /* Moves avatar upward like Image 2 */
+  display: flex;
+  justify-content: center;
+}
+
+.profile-display {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #ffffff;
+  padding: 13px 0px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.profile-display:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding-left: 20px; /* NEW – increases hover width */
+  padding-right: 20px; /* NEW – increases hover width */
+}
+
+.avatar-placeholder {
+  font-size: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #1e6f78; /* teal icon text for contrast */
+  background: #ffffff; /* WHITE CIRCLE background */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.navbar.collapsed .avatar-placeholder {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.navbar.collapsed .profile-text,
+.navbar.collapsed .profile-options-icon {
+  display: none !important;
+}
+
+.navbar.collapsed .profile-display {
+  justify-content: center; /* center avatar */
+  padding: 15px 0;
+}
+.profile-text {
+  flex-grow: 1;
+  font-size: 20px; /* reduced from 28px */
+  margin-left: 8px; /* reduced from 25px */
+  color: #ffffff;
+}
+
+.profile-options-icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.profile-info-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar.collapsed .profile-info-group {
+  display: none;
+}
+
+/* -------------------- 7. Dropdown -------------------- */
+.profile-dropdown-menu {
+  position: absolute;
+  bottom: 70px;
+  right: 20px;
+  background: #fefefe52;
+  border-radius: 12px;
+  min-width: 160px;
+  padding: 8px;
+}
+
+/* -------------------- 8. Mobile Switcher -------------------- */
+@media (max-width: 768px) {
+  .navbar-mobile-pet-switcher-wrapper {
+    display: none !important;
+  }
+}

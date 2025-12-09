@@ -1,0 +1,54 @@
+.dashboard-nav-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+  cursor: pointer;
+  color: #edf6f7;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 1;
+  justify-content: flex-start;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.dashboard-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 25px;
+  margin-right: 15px;
+}
+.sidebar-toggle:has([title="Expand Sidebar"]) ~ .dashboard-icon {
+  margin: 0 !important;
+}
+
+.nav-icon-svg {
+  width: 100%;
+  height: 100%;
+}
+.dashboard-label {
+  font-size: inherit;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+}
+.dashboard-nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  opacity: 1;
+}
+.dashboard-nav-item.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+.dashboard-nav-item span {
+  color: inherit;
+}
+.dashboard-nav-item .icon {
+  width: 25px;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-right: 25px;
+  transition: color 0.2s ease;
+}

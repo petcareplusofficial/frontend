@@ -1,0 +1,292 @@
+.reports-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  background-color: #edf6f7;
+}
+
+/* All main titles */
+.reports-h2 h2 {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #232323;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.reports-heading-icon {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.reports-top-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 37px;
+}
+
+/* Cards — unified styling for all six cards */
+.reports-medical,
+.reports-height-weight,
+.reports-meals,
+.reports-suppliments,
+.allergies-full-row,
+.vaccinations-full-row {
+  background: #fff;
+  border-radius: 16px;
+  border: 0.5px solid #b3b3b3;
+  box-shadow: 0 4px 14px rgba(63, 64, 66, 0.08);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* Specific styling for Supplement Card Text - Updated to 400 (Non-bold) */
+.reports-suppliments .supplements-row .diet-label-title,
+.reports-suppliments .supplements-row .diet-value-title {
+  color: #000;
+  font-family: Mulish, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400; /* Set to Non-bold */
+  line-height: normal;
+}
+
+/* SCOPED OVERRIDES for MEALS and SUPPLEMENTS to remove their default inner padding/borders */
+.reports-main .reports-meals,
+.reports-main .reports-suppliments {
+  border: 0.5px solid #b3b3b3;
+  box-shadow: none;
+}
+
+.reports-main .reports-meals > *,
+.reports-main .reports-suppliments > * {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.reports-main .reports-meal-list-wrapper {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 12px;
+}
+
+/* Date grouping */
+.reports-main .daily-meal-group {
+  margin-bottom: 24px;
+  padding-top: 10px;
+}
+
+.reports-main .meal-date-header {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500; /* Keeping a medium weight for date header */
+  color: #7a7a7a;
+  margin-bottom: 20px;
+}
+
+.reports-middle-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 38px;
+}
+
+/* Full width rows */
+.allergies-full-row,
+.vaccinations-full-row {
+  margin-bottom: 38px;
+}
+
+.allergies-full-row h2,
+.vaccinations-full-row h2 {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #232323;
+  margin-bottom: 16px;
+}
+
+/* --- FIX FOR DUPLICATE HEADINGS AND INNER CARD STYLING --- */
+
+/* Hide the inner card's H2 if it exists (for Supplements/Vaccinations) */
+.vaccinations-full-row .hw-allergy-card h2:first-of-type,
+.reports-suppliments .diet-card-heading:first-of-type,
+.reports-suppliments .hw-allergy-card h2:first-of-type {
+  display: none !important;
+}
+
+/* Make inner components transparent to show the unified card background (hw-allergy-card is used in both Allergies and Vaccinations) */
+.allergies-full-row .hw-allergy-card,
+.vaccinations-full-row .hw-allergy-card {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: 100%;
+}
+
+/* --- FIX FOR ALLERGIES CARD COLUMN REPETITION (RE-ADDED) --- */
+/* Targeting the grid structure inside the Allergies/Vaccinations content card */
+.allergies-full-row .hw-allergy-card > div:first-child,
+.vaccinations-full-row .hw-allergy-card > div:first-child {
+  margin-bottom: 10px;
+}
+.allergies-grid-card .diet-grid-row,
+.allergies-full-row .hw-allergy-card > div[style*="gridTemplateColumns"],
+.vaccinations-full-row .hw-allergy-card > div[style*="gridTemplateColumns"] {
+  display: grid;
+  grid-template-columns: 10% repeat(3, 1fr); /* Allergies default columns */
+  gap: 10px;
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+.allergies-grid-card .diet-grid-row:last-child,
+.allergies-full-row .hw-allergy-card > div:last-child {
+  border-bottom: none;
+}
+/* ------------------------------------------------------------ */
+
+/* -----------------------------
+   TABLET MEDIA QUERY (769px to 1024px)
+-------------------------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .reports-main {
+    padding: 20px 24px;
+  }
+
+  /* FIX START: Setting the reports-top-row to be explicitly 50/50 */
+  .reports-top-row {
+    display: grid;
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Changed from auto-fit to 2, 1fr for fixed 50/50 split */
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .reports-middle-row {
+    /* Kept middle row flexible */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .reports-medical,
+  .reports-height-weight,
+  .reports-meals,
+  .reports-suppliments,
+  .allergies-full-row,
+  .vaccinations-full-row {
+    padding: 20px;
+    /* Ensure full-width cards take up the available grid space */
+    grid-column: span 2;
+  }
+
+  /* FIX: REMOVED the conflicting override: 
+  .reports-top-row .reports-medical,
+  .reports-top-row .reports-height-weight {
+    grid-column: span 1;
+  }
+  */
+
+  .reports-h2 h2 {
+    font-size: 1.35rem;
+  }
+  /* FIX END */
+}
+
+/* -----------------------------
+   MOBILE MEDIA QUERY (Max 768px)
+-------------------------------- */
+@media (max-width: 768px) {
+  .reports-main {
+    padding: 20px 16px;
+  }
+
+  /* Force all rows to stack vertically */
+  .reports-top-row,
+  .reports-middle-row {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    margin-bottom: 24px;
+  }
+
+  /* Force all cards full width */
+  .reports-medical,
+  .reports-height-weight,
+  .reports-meals,
+  .reports-suppliments,
+  .allergies-full-row,
+  .vaccinations-full-row {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .allergies-full-row,
+  .vaccinations-full-row {
+    margin-bottom: 24px;
+  }
+
+  /* Headers */
+  .reports-h2 h2,
+  .allergies-full-row h2,
+  .vaccinations-full-row h2 {
+    font-size: 1.25rem;
+  }
+  .diet-grid-row {
+    font-weight: bold;
+  }
+  .diet-label-title {
+    font-weight: bold !important;
+  }
+
+  /* --- FIX FOR MEAL/SUPPLEMENT ROWS ON SMALLER SCREENS --- */
+  .reports-main .reports-meals .diet-grid-row,
+  .reports-main .reports-suppliments .supplements-row {
+    display: grid;
+    grid-template-columns: 1fr 24px 2fr;
+    gap: 12px;
+    padding: 8px 0;
+  }
+
+  /* Ensure Vaccinations/Allergies stack correctly on mobile if needed */
+  .allergies-full-row .hw-allergy-card > div[style*="gridTemplateColumns"],
+  .vaccinations-full-row .hw-allergy-card > div[style*="gridTemplateColumns"] {
+    /* If necessary, override the 40/30/30 structure on mobile: */
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reports-main {
+    padding: 16px 12px;
+  }
+
+  .reports-main .reports-meals > div,
+  .reports-main .reports-suppliments > div {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .vaccinations-full-row h2 {
+    font-size: 1.125rem;
+  }
+}

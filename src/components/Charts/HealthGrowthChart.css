@@ -1,0 +1,40 @@
+.health-growth-chart-container {
+  background: #fff;
+  border-radius: 16px;
+  border: 2px solid #c399f7;
+  padding: 1.5rem;
+  width: 100%;
+  min-height: 350px;
+}
+
+.chart-header {
+  margin-bottom: 1.5rem;
+}
+
+.chart-title {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #232323;
+}
+
+.chart-wrapper {
+  height: 280px;
+  position: relative;
+  max-width: 560px;
+}
+
+@media (max-width: 768px) {
+  .health-growth-chart-container {
+    padding: 1rem;
+    min-height: 300px;
+  }
+
+  .chart-wrapper {
+    height: 240px;
+  }
+
+  .chart-title {
+    font-size: 1rem;
+  }
+}

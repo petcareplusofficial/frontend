@@ -1,0 +1,29 @@
+.CompletionHistory-Main-Container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 600px) {
+  .CompletionHistory-Main-Container {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .CompletionHistory-Main-FirstChild,
+  .CompletionHistory-Main-SecondChild {
+    width: 48%;
+  }
+}
+
+.CompletionHistory-Main-FirstChild,
+.CompletionHistory-Main-SecondChild {
+  margin-bottom: 2rem;
+}
+
+.CompletionHistory-Main-SecondChild-sub-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

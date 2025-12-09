@@ -1,0 +1,24 @@
+.fieldset-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.submit-dietplan-btn {
+  border-radius: 16px;
+  background: #1e6f78;
+  color: #fff;
+}
+
+fieldset {
+  margin-bottom: 10px;
+}
+.PetsNameInDitePlan {
+  text-transform: capitalize;
+}
+
+.submit-dietplan-btn-div {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}

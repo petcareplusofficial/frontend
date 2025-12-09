@@ -1,0 +1,20 @@
+.todaysplan-meal-section, .todaysplan-supplement-section {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    gap: 20px;
+}
+
+.todaysplan-main{
+    display: flex;
+    flex-flow: row wrap;
+    gap:20px;
+}
+
+
+.todaysplan-supplement-section h2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size:2rem;
+}

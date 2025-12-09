@@ -1,0 +1,63 @@
+.card {
+  border: 1px solid #aaa;
+  border-radius: 12px;
+  padding: 16px;
+  display: inline-block;
+  background: #fff;
+  /* width: 100%; */
+}
+
+.cardTitle {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.NutritionTotalsCard {
+  max-width: 250px;
+}
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  align-self: center;
+  justify-self: center;
+}
+
+.chart-container {
+  max-height: 100px;
+  max-width: 250px;
+  justify-self: center;
+}
+
+.card {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: start;
+  min-width: 200px;
+  align-self: center;
+}
+
+.list {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  flex: 1 1 100%;
+}
+
+.ListItems {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ListItemsValue {
+  text-align: center;
+}

@@ -1,0 +1,277 @@
+.vet-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.vet-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.vet-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.vet-info-left {
+  flex: 1;
+}
+
+.vet-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 8px 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+.vet-location {
+  font-size: 14px;
+  color: #6B7280;
+  margin: 0;
+  font-family: 'Cabin', sans-serif;
+}
+
+.vet-description {
+  font-size: 14px;
+  color: #4B5563;
+  line-height: 1.6;
+  margin: 0;
+  font-family: 'Cabin', sans-serif;
+}
+
+.vet-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  font-family: 'Nunito', sans-serif;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.star.filled {
+  color: #FCD34D;
+}
+
+.star.half {
+  color: #FCD34D;
+  opacity: 0.5;
+}
+
+.star.empty {
+  color: #D1D5DB;
+}
+
+.book-now-btn {
+  background: #1E6F78;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Cabin', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.book-now-btn:hover {
+  background: #185761;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(30, 111, 120, 0.3);
+}
+
+.book-now-btn:active {
+  transform: scale(0.98);
+}
+
+.vet-card-mobile {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Vet Avatar Placeholder */
+.vet-avatar {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  background: #E5E7EB;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.vet-avatar-initials {
+  font-size: 24px;
+  font-weight: 700;
+  color: #6B7280;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Placeholder icon alternative */
+.vet-avatar::after {
+  content: '🩺';
+  position: absolute;
+  font-size: 32px;
+  opacity: 0.3;
+}
+
+.vet-card-mobile-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vet-name-mobile {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+.vet-location-mobile {
+  font-size: 13px;
+  color: #6B7280;
+  margin: 0;
+  font-family: 'Cabin', sans-serif;
+}
+
+.vet-rating-mobile {
+  margin-top: 4px;
+}
+
+.rating-number-mobile {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  font-family: 'Cabin', sans-serif;
+}
+
+.book-now-btn-mobile {
+  background: #1E6F78;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Cabin', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  align-self: center;
+}
+
+.book-now-btn-mobile:hover {
+  background: #185761;
+  transform: scale(1.02);
+}
+
+
+@media (max-width: 768px) {
+  .vet-card {
+    display: none;
+  }
+  
+  .vet-card-mobile {
+    display: flex;
+  }
+
+  .vet-avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .vet-avatar-initials {
+    font-size: 20px;
+  }
+
+  .vet-avatar::after {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Show desktop card, hide mobile card */
+  .vet-card {
+    display: flex;
+  }
+  
+  .vet-card-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .vet-card-mobile {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .vet-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .vet-avatar-initials {
+    font-size: 18px;
+  }
+
+  .vet-avatar::after {
+    font-size: 24px;
+  }
+
+  .vet-name-mobile {
+    font-size: 16px;
+  }
+
+  .vet-location-mobile {
+    font-size: 12px;
+  }
+
+  .book-now-btn-mobile {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}

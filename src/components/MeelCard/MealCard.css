@@ -1,0 +1,203 @@
+.meal-card {
+  background: #fffffd;
+  border: 0.5px solid rgba(93, 93, 93, 0.12);
+  border-radius: 12px;
+  padding: 24px;
+  min-height: 200px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  transition: box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  flex: 1 1 auto;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 600px;
+}
+
+.meal-card.refreshing {
+  opacity: 0.6;
+}
+
+.meal-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: opacity 0.3s ease;
+  flex: 1 1 auto;
+}
+
+.meal-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  text-transform: capitalize;
+  text-align: start;
+}
+
+.meal-calories {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  text-align: start;
+}
+
+.meal-food {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.meal-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.meal-food-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: end;
+}
+
+.meal-food-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.meal-weight {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 2px;
+}
+
+.meal-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  justify-content: space-around;
+}
+
+.refresh-btn,
+.check-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.2s ease, transform 0.1s ease;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.refresh-btn:hover:not(:disabled) {
+  color: #71aba9;
+}
+
+.refresh-btn.loading {
+  color: #71aba9;
+}
+
+.refresh-btn .spin {
+  animation: spin 0.8s linear infinite;
+  color: #71aba9;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.refresh-btn:disabled,
+.check-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.check-btn.completed {
+  color: #3bb273;
+}
+
+.check-btn:hover:not(:disabled) {
+  color: #3bb273;
+}
+
+.check-btn.completed:hover {
+  transform: none;
+}
+
+@media (max-width: 640px) {
+  .meal-card {
+    flex-flow: row nowrap;
+    align-items: flex-start;
+  }
+
+  .meal-right {
+    flex-flow: column wrap;
+    /* width: 100%; */
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+}
+
+.diet-grid-card {
+  padding: 28px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 320px;
+}
+
+.diet-grid-row {
+  display: grid;
+  grid-template-columns: 1.25fr 0.7fr 1.5fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.diet-label,
+.diet-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #222;
+}
+.diet-icon {
+  justify-self: center;
+  color: #18869c;
+  font-size: 25px;
+}
+
+/* Add this for empty message in card */
+.diet-grid-empty {
+  color: #6b7280;
+  text-align: center;
+  padding: 70px 0;
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+.supplement-title {
+  text-align: left;
+}
+
+.supplement-food {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  flex: 1 1 auto;
+}
