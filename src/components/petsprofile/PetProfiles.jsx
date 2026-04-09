@@ -125,7 +125,7 @@ const DateFormField = ({ label, name, value, onChange, readOnly }) => (
           const event = {
             target: {
               name: name,
-              value: date ? date.toISOString().split("T")[0] : "",
+              value: date || "",
             },
           };
           onChange(event);

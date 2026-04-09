@@ -109,7 +109,7 @@ const DateFormField = ({
         const event = {
           target: {
             name,
-            value: date ? date.toISOString().split("T")[0] : "",
+            value: date || "",
           },
         };
         onChange(event);
