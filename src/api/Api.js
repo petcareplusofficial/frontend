@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = "https://backend-5x9p.onrender.com/api/v1/petcare";
+const BASE_URL = "https://petcareplus.wmdd4950.com/api/v1/petcare";
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
@@ -9,7 +9,7 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
   if (token && !config.headers["Authorization"]) {
-    config.headers["Authorization"] = `${token}`;
+    config.headers["Authorization"] = `Bearer ${token}`;
   }
   return config;
 });
