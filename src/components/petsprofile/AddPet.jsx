@@ -264,12 +264,12 @@ function AddPet() {
 
       form.append("name", formData.name);
       form.append("breedId", formData.breed);
-      form.append(
-        "dob",
-        formData.dob
-          ? new Date(formData.dob).toISOString()
-          : new Date().toISOString()
-      );
+      const dobToIso = (value) => {
+        if (!value) return new Date().toISOString();
+        const d = value instanceof Date ? value : new Date(value);
+        return isNaN(d.getTime()) ? new Date().toISOString() : d.toISOString();
+      };
+      form.append("dob", dobToIso(formData.dob));
       form.append("age", calculateAge(formData.dob));
       form.append("sex", formData.sex || "male");
 

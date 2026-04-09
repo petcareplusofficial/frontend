@@ -453,9 +453,12 @@ function PetProfile() {
       const updateData = {
         name: formData.name,
         breedId: formData.breed,
-        dob: formData.dob
-          ? new Date(formData.dob).toISOString()
-          : new Date().toISOString(),
+        dob: (() => {
+          if (!formData.dob) return new Date().toISOString();
+          const d =
+            formData.dob instanceof Date ? formData.dob : new Date(formData.dob);
+          return isNaN(d.getTime()) ? new Date().toISOString() : d.toISOString();
+        })(),
         age: calculateAgeNumber(formData.dob) || 0,
         sex: formData.sex || "male",
       };
